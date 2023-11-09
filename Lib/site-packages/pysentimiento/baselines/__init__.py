@@ -1,3 +1,0 @@
-"""
-Entrypoint for baseline models
-"""
