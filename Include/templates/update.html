@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <h1>Editar Usuario</h1>
+    <form method="post">
+        Nombre de usuario: <input type="text" name="username" value="{{ user.username }}" required><br>
+        Correo electrónico: <input type="text" name="email" value="{{ user.email }}" required><br>
+        Contraseña: <input type="password" name="password" value="{{ user.password }}" required><br>
+        <input type="submit" value="Guardar Cambios">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD de Usuarios</title>
+</head>
+<body>
+    <h1>Usuarios</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} - {{ user.email }}
+                <a href="/update/{{ user.id }}">Editar</a>
+                <a href="/delete/{{ user.id }}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Agregar un nuevo usuario</h2>
+    <form method="post" action="/add">
+        Nombre de usuario: <input type="text" name="username" required><br>
+        Correo electrónico: <input type="text" name="email" required><br>
+        Contraseña: <input type="password" name="password" required><br>
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+</html>
