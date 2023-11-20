@@ -9,13 +9,20 @@ def getlistanime(lista):
     m = anilist.search_anime(genre=lista, score=range(80, 95),)
     i=0
     listo=[]
-    while i<13:
-        mm = m[i]
-        listo.append(mm['name_romaji'])
-        i+=1
+    while len(listo)==0:
+        while  i < len(m):
+            mm = m[i]
+            listo.append(mm['name_romaji'])
+            i+=1
+        
+    
+        m = anilist.search_anime(genre=lista[0], score=range(80, 95),)
+        i=0
     return listo
+
 def getinfor(name):
     anilist = Anilist()
+    print(name)
     anime2=anilist.get_anime(name)
     return anime2['desc']
 

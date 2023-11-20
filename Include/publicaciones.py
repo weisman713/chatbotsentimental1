@@ -26,7 +26,9 @@ def getpublicaciones(nombre):
         i=i+1;
         soup =BeautifulSoup(status['content'],'html.parser')
         paragraph = soup.find('p')
-        cadena.append(paragraph.get_text())
+        
+        if paragraph:
+            cadena.append(paragraph.get_text())
         if i== 5:
             break
 
