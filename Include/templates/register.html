@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Registrarse</title>
     <style>
@@ -24,7 +24,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            max-width: 400px; /* Ancho máximo del formulario */
+            margin: 0 auto; /* Centrar el formulario en la página */
         }
 
         label {
@@ -35,26 +36,32 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin: 6px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box; /* Para incluir el relleno y el borde en el ancho total */
+        }
+
+        /* Contenedor para los campos de contraseña y confirmación de contraseña */
+        .password-container {
+            display: flex;
+            gap: 10px;
         }
 
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
             cursor: pointer;
         }
 
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+
         #exit-button {
             background-color: #22223b;
             color: #fff;
@@ -66,21 +73,51 @@
             top: 10px;
             right: 10px;
         }
+
         #exit-button:hover {
             background-color: #8e44ad;
         }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
     </style>
+    <script>
+        function validarFormulario() {
+            var password = document.getElementById("password").value;
+            var confirmarPassword = document.getElementById("confirm_password").value;
+            var errorMensaje = document.getElementById("error_message");
+
+            if (password !== confirmarPassword) {
+                errorMensaje.innerHTML = "La contraseña y la confirmación de contraseña no coinciden";
+                return false;
+            }
+
+            errorMensaje.innerHTML = ""; // Limpiar mensaje de error si es correcto
+            return true;
+        }
+    </script>
 </head>
 <body>
     <a id="exit-button" href="/logout">Salir</a>
-    <form method="post" action="/register">
+    <form method="post" action="/register" onsubmit="return validarFormulario();">
         <h1>Registrarse</h1>
         <label for="username">Nombre de usuario:</label>
         <input type="text" name="username" required>
         <label for="email">Correo electrónico:</label>
         <input type="email" name="email" required>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
+        <div class="password-container">
+            <div style="flex: 1;">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div style="flex: 1;">
+                <label for="confirm_password">Confirmar contraseña:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+        </div>
+        <div id="error_message" class="error-message"></div>
         <input type="submit" value="Registrarse">
     </form>
 </body>

@@ -460,7 +460,7 @@ def send_message():
             server_response="ya tienes los generos ingresados a la cuenta"
             respuesta2=0
         else:
-            server_response=server_response+"\n  genero para la emocion "+str(emociones[0])+": "
+            server_response=server_response+"\n  genero para ver cuando sienta "+str(emociones[0])+": "
             
             respuesta2=3
             conteando=0
