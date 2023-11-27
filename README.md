@@ -1,4 +1,4 @@
-# Chatbot de recomendacion de anime segun el estado de animo del usuario
+# Chatbot de recomendacion de anime segun el estado de animo del usuario- WUEISMAN MUÑOZ ACOSTA
 ## Instalacion
 
 **Versiones del Proyecto:**
@@ -23,7 +23,7 @@
 
 ## Pruebas
 pruebas realizadas por los estudiantes de ingenieria en sistemas
-- robinson lopez sanclemente
-- juan camilo morales fernandez
+- Robinson Lopez Sanclemente
+- Juan Camilo Morales Fernandez
 
 [ir a los videos de las pruebas](https://drive.google.com/drive/folders/19vAxJ3ZM2oErphm1zCiYMXwnzNzJNjfm?usp=drive_link)
