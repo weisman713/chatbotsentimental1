@@ -1,21 +1,29 @@
-# chatbotsentimental1
-chatbot de recomendacion de anime
-para la compilacion de la aplicacion tener en cuenta instalar las herramientas utilizadas:
-import json,
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify,
-from flask_sqlalchemy import SQLAlchemy,
-from flask_bcrypt import Bcrypt,
-import nltk,
-from nltk.chat.util import Chat, reflections,
-from spellchecker import SpellChecker,
-import unidecode  # Para quitar las tildes,
-import datetime,
-from AnilistPython import Anilist,
-from mastodon import Mastodon,
-from bs4 import BeautifulSoup,
-from pysentimiento import create_analyzer,
-from translate import Translator,
+# Chatbot de recomendacion de anime segun el estado de animo del usuario
+## Instalacion
 
-pruebas realizadas por los estudiantes robinson lopez sanclemente y juan camilo morales fernandez
+**Versiones del Proyecto:**
 
-https://drive.google.com/drive/folders/19vAxJ3ZM2oErphm1zCiYMXwnzNzJNjfm?usp=drive_link
+- **Python:** 3.11.5
+- **Librerías:**
+  - `json`: Parte de la biblioteca estándar de Python.
+  - `Flask`: 3.0.0
+  - `Flask-Bcrypt`: 1.0.1
+  - `Flask-Migrate`: 4.0.5
+  - `Flask-SQLAlchemy`: 3.1.1
+  - `nltk`: 3.8.1
+  - `spellchecker`: 0.7.2
+  - `unidecode`: 1.3.7
+  - `AnilistPython`: 0.1.3
+  - `Mastodon`: 1.8.1
+  - `beautifulsoup4`: 4.12.2
+  - `pysentimiento`: 0.7.2
+  - `translate`: 3.6.1
+  - `datetime`: Parte de la biblioteca estándar de Python.
+
+
+## Pruebas
+pruebas realizadas por los estudiantes de ingenieria en sistemas
+- robinson lopez sanclemente
+- juan camilo morales fernandez
+
+[ir a los videos de las pruebas](https://drive.google.com/drive/folders/19vAxJ3ZM2oErphm1zCiYMXwnzNzJNjfm?usp=drive_link)
